@@ -1,6 +1,5 @@
 import React from 'react';
 import CalcButton from './calcButton';
-// import NumbersContainer from './numbersContainer';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class ButtonsContainer extends React.Component {
