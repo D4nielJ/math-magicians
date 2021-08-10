@@ -12,8 +12,9 @@
 :root {
   --color-background: #22223b;
   --color-dark: #4a4e69;
-  --color-middle-shade: #9a8c98;
-  --color-primary: #c9ada7;
+  --color-brown-shade: #9a8c98;
+  --color-brown-light: #c9ada7;
+  --color-blue-shade: #c3c6d5;
   --color-light: #f2e9e4;
 }
 
