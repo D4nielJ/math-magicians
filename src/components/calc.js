@@ -9,9 +9,9 @@ class Calc extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      total: undefined,
-      next: undefined,
-      operation: undefined,
+      total: null,
+      next: null,
+      operation: null,
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
@@ -37,6 +37,7 @@ class Calc extends React.Component {
         operation,
       });
     }
+    console.log(this.state);
   };
 
   handleKeyDown(e) {
