@@ -1,0 +1,39 @@
+.calc {
+  background: var(--color-dark);
+  color: #fff;
+  max-width: 50rem;
+  margin: 0 auto;
+  border-top-left-radius: 0.5rem;
+  border-top-right-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.15) 3px 3px 5px;
+}
+
+.calc__display {
+  font-size: 1.9rem;
+  padding: 2.5em 2rem 1.5em;
+  text-align: right;
+}
+
+.calc__btns-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  border: 0.1rem solid rgba(255, 255, 255, 0.3);
+}
+
+.calc__btn {
+  cursor: pointer;
+  border: none;
+  border: 0.1rem solid rgba(255, 255, 255, 0.3);
+  background: var(--color-light);
+  color: var(--color-dark);
+  padding: 1.5em 2rem;
+}
+
+.btn--span-2 {
+  grid-column: span 2;
+}
+
+.btn--colored {
+  background: var(--color-blue-shade);
+  color: var(--color-dark);
+}
