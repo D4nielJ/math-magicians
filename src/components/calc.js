@@ -1,6 +1,7 @@
 import React from 'react';
 import Display from './calc/display';
 import ButtonsContainer from './calc/buttonsContainer';
+import operate from './calc/logic/operate';
 import './calc.css';
 
 // eslint-disable-next-line react/prefer-stateless-function
@@ -8,13 +9,16 @@ class Calc extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      displayValue: '0',
+      total: null,
+      next: null,
+      operation: null,
     };
     this.handleClick = this.handleClick.bind(this);
     this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
-  handleClick() {
+  handleClick(e) {
+    operate(this.state, e.target.dataset.name);
     this.setState({
       displayValue: '1',
     });
@@ -27,14 +31,12 @@ class Calc extends React.Component {
   render() {
     const { displayValue } = this.state;
     return (
-      <div
-        className="calc"
-        onClick={this.handleClick}
-        onKeyDown={this.handleKeyDown}
-        aria-hidden="true"
-      >
+      <div className="calc">
         <Display value={displayValue} />
-        <ButtonsContainer />
+        <ButtonsContainer
+          click={this.handleClick}
+          keyDown={this.handleKeyDown}
+        />
       </div>
     );
   }

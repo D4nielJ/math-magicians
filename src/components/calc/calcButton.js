@@ -9,7 +9,7 @@ class CalcButton extends React.Component {
       ${colored ? ' btn--colored' : ''} 
       ${span !== 1 ? ` btn--span-${span}` : ''}`;
     return (
-      <button type="button" className={classList}>
+      <button type="button" className={classList} data-name={value}>
         {value}
       </button>
     );

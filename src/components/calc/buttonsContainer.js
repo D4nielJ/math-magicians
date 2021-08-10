@@ -1,11 +1,18 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import CalcButton from './calcButton';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class ButtonsContainer extends React.Component {
   render() {
+    const { click, keyDown } = this.props;
     return (
-      <div className="calc__btns-container">
+      <div
+        className="calc__btns-container"
+        onClick={click}
+        onKeyDown={keyDown}
+        aria-hidden="true"
+      >
         <CalcButton name="clear" value="AC" />
         <CalcButton name="sign" value="+/-" />
         <CalcButton name="percentage" value="%" />
@@ -33,5 +40,15 @@ class ButtonsContainer extends React.Component {
     );
   }
 }
+
+ButtonsContainer.propTypes = {
+  click: PropTypes.func,
+  keyDown: PropTypes.func,
+};
+
+ButtonsContainer.defaultProps = {
+  click: () => console.log(-1),
+  keyDown: () => console.log(-1),
+};
 
 export { ButtonsContainer as default };
