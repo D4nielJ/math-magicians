@@ -37,7 +37,6 @@ class Calc extends React.Component {
         operation,
       });
     }
-    console.log(this.state);
   };
 
   handleKeyDown(e) {
@@ -45,10 +44,10 @@ class Calc extends React.Component {
   }
 
   render() {
-    const { next } = this.state;
+    const { total, next } = this.state;
     return (
       <div className="calc">
-        <Display value={next} />
+        <Display total={total} next={next} />
         <ButtonsContainer
           click={this.handleClick}
           keyDown={this.handleKeyDown}
