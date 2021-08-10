@@ -1,3 +1,4 @@
+// eslint-disable-next-line react/prefer-stateless-function
 import Big from 'big.js';
 
 export default function operate(numberOne, numberTwo, operation) {

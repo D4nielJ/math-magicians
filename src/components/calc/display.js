@@ -5,7 +5,11 @@ import PropTypes from 'prop-types';
 class Display extends React.Component {
   render() {
     const { value } = this.props;
-    return <div className="calc__display">{value}</div>;
+    let display = '0';
+    if (value) {
+      display = value;
+    }
+    return <div className="calc__display">{display}</div>;
   }
 }
 
