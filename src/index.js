@@ -4,7 +4,7 @@ import Calc from './components/calc';
 
 ReactDOM.render(
   <React.StrictMode>
-    <Calc test="Hello world" />
+    <Calc />
   </React.StrictMode>,
   document.getElementById('root'),
 );

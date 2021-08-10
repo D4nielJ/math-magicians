@@ -1,14 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import Display from './calc/display';
+import Button from './calc/button';
 
-const Calc = ({ test }) => <div>{ test }</div>;
-
-Calc.propTypes = {
-  test: PropTypes.string,
-};
-
-Calc.defaultProps = {
-  test: '',
-};
+class Calc extends React.Component {
+  render() {
+    return (
+      <div className="calc">
+        <Display />
+        <Button />
+      </div>
+    );
+  }
+}
 
 export { Calc as default };
