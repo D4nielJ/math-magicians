@@ -17,11 +17,16 @@ class Calc extends React.Component {
     this.handleKeyDown = this.handleKeyDown.bind(this);
   }
 
-  handleClick = async (e) => {
-    const { total, next, operation } = await calculate(
-      this.state,
-      e.target.dataset.name,
-    );
+  handleClick = (e) => {
+    this.updateState(e.target.dataset.name);
+  };
+
+  handleKeyDown = (e) => {
+    e.preventDefault();
+  };
+
+  updateState = (key) => {
+    const { total, next, operation } = calculate(this.state, key);
     if (total || total === null) {
       this.setState({
         total,
@@ -38,10 +43,6 @@ class Calc extends React.Component {
       });
     }
   };
-
-  handleKeyDown(e) {
-    console.log(e.keyCode, this);
-  }
 
   render() {
     const { total, next } = this.state;

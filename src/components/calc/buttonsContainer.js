@@ -47,8 +47,8 @@ ButtonsContainer.propTypes = {
 };
 
 ButtonsContainer.defaultProps = {
-  click: () => console.log(-1),
-  keyDown: () => console.log(-1),
+  click: () => -1,
+  keyDown: () => -1,
 };
 
 export { ButtonsContainer as default };
