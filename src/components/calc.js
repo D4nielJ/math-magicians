@@ -1,6 +1,7 @@
 import React from 'react';
 import Display from './calc/display';
 import ButtonsContainer from './calc/buttonsContainer';
+import './calc.css';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class Calc extends React.Component {
