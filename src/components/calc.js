@@ -37,7 +37,6 @@ class Calc extends React.Component {
         operation,
       });
     }
-    console.log(this.state);
   };
 
   handleKeyDown(e) {
