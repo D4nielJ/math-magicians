@@ -2,8 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import CalcButton from './calcButton';
 
-// eslint-disable-next-line react/prefer-stateless-function
 class ButtonsContainer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
   render() {
     const { click, keyDown } = this.props;
     return (
