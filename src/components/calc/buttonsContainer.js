@@ -6,7 +6,7 @@ import NumbersContainer from './numbersContainer';
 class ButtonsContainer extends React.Component {
   render() {
     return (
-      <>
+      <div className="calc__btns-container">
         <NumbersContainer />
         <CalcButton name="clear" value="AC" />
         <CalcButton name="sign" value="+/-" />
@@ -17,7 +17,7 @@ class ButtonsContainer extends React.Component {
         <CalcButton name="sum" value="+" />
         <CalcButton name="floating" value="." />
         <CalcButton name="result" value="=" />
-      </>
+      </div>
     );
   }
 }
