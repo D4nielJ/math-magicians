@@ -24,8 +24,8 @@ class Calc extends React.Component {
     e.preventDefault();
   };
 
-  updateState = async (key) => {
-    const { total, next, operation } = await calculate(this.state, key);
+  updateState = (key) => {
+    const { total, next, operation } = calculate(this.state, key);
     if (total || total === null) {
       this.setState({
         total,
