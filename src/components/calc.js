@@ -8,7 +8,6 @@ const Calc = () => {
   const [calc, setCalc] = useState({ total: null, next: null, operation: null });
 
   const updateState = async (obj, key) => {
-    console.log(obj, key);
     let { total, next, operation } = await calculate(obj, key);
     if (total === undefined) {
       total = obj.total;
