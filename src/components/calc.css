@@ -11,8 +11,29 @@
   border-top-left-radius: 0.5rem;
   border-top-right-radius: 0.5rem;
   font-size: 1.9rem;
-  padding: 2.5em 2rem 1.5em;
+  padding: 1.5em 2rem 1em;
   text-align: right;
+  display: grid;
+  grid-template: 1fr 1fr / 1fr 2fr;
+  align-items: center;
+}
+
+.display__operation {
+  grid-area: 2/1;
+}
+
+.display__holder {
+  grid-area: 1/2;
+  font-size: 1.6rem;
+  opacity: 0.6;
+}
+
+.display__next {
+  grid-area: 2/2;
+}
+
+.no-opacity {
+  opacity: 0;
 }
 
 .calc__btns-container {
