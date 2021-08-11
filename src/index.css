@@ -6,16 +6,20 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-
-  /* border: 1px solid #f2e9e4; */
 }
 
 :root {
-  --color-background: #22223b;
-  --color-dark: #4a4e69;
-  --color-brown-shade: #9a8c98;
-  --color-brown-light: #c9ada7;
-  --color-blue-shade: #c3c6d5;
+  --color-background: #f2e9e4;
+  --color-display: #4a4e69;
+  --color-btns-container: #fdcdad;
+  --color-calc-btn: #f2e9e4;
+  --color-calc-btn-colored: #ffb685;
+  --color-background-dark: #22223b;
+  --color-display-dark: #4a4e69;
+  --color-btns-container-dark: #fdcdad;
+  --color-calc-btn-dark: #f2e9e4;
+  --color-calc-btn-colored-dark: #ffb685;
+  --color-blue-shade-dark: #c3c6d5;
   --color-light: #f2e9e4;
 }
 
