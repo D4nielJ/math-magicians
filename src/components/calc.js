@@ -1,60 +1,40 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Display from './calc/display';
 import ButtonsContainer from './calc/buttonsContainer';
 import calculate from './calc/logic/calculate';
 import './calc.css';
 
-class Calc extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      total: null,
-      next: null,
-      operation: null,
-    };
-    this.handleClick = this.handleClick.bind(this);
-    this.handleKeyDown = this.handleKeyDown.bind(this);
-  }
+const updateState = (obj, key) => {
+  const newObj = calculate(obj, key);
+  return newObj;
+};
 
-  handleClick = (e) => {
-    this.updateState(e.target.dataset.name);
-  };
+const handleClick = (obj, e) => {
+  updateState(obj, e.target.dataset.name);
+};
 
-  handleKeyDown = (e) => {
-    e.preventDefault();
-  };
+const handleKeyDown = (e) => {
+  e.preventDefault();
+};
 
-  updateState = (key) => {
-    const { total, next, operation } = calculate(this.state, key);
-    if (total || total === null) {
-      this.setState({
-        total,
-      });
-    }
-    if (next || next === null) {
-      this.setState({
-        next,
-      });
-    }
-    if (operation || operation === null) {
-      this.setState({
-        operation,
-      });
-    }
-  };
+const Calc = () => {
+  const [total, setTotal] = useState(null);
+  const [next, setNext] = useState(null);
+  const [operation, setOperation] = useState(null);
+  const [calc, setCalc] = useState({
+    total: null,
+    next: null,
+    operation: null,
+  });
 
-  render() {
-    const { total, next } = this.state;
-    return (
-      <div className="calc">
-        <Display total={total} next={next} />
-        <ButtonsContainer
-          click={this.handleClick}
-          keyDown={this.handleKeyDown}
-        />
-      </div>
-    );
-  }
-}
+  useEffect(handleClick(calc, e));
+
+  return (
+    <div className="calc">
+      <Display total={total} next={next} />
+      <ButtonsContainer click={handleClick} keyDown={handleKeyDown} />
+    </div>
+  );
+};
 
 export { Calc as default };
