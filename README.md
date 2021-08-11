@@ -1,8 +1,19 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Project Title
+# Math Magicians
 
-Add description here.
+Math Magicians is a website for all fans of mathematics. Single Page App that allows users:
+
+- Make simple calculations.
+- Read a random math-related quote.
+
+By building this application I got to learn and practice how to use React.
+
+## Previews
+
+- [Visit the live preview here](https://d4nielj.github.io/math-magicians/)
+
+### ![Screenshot](./screenshot.png)
 
 ## Create React App
 
@@ -20,10 +31,10 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.\
 You will also see any lint errors in the console.
 
-### `npm test`
+<!-- ### `npm test`
 
 Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information. -->
 
 ### `npm run build`
 
@@ -35,7 +46,7 @@ Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+<!-- ### `npm run eject`
 
 **Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
@@ -43,11 +54,11 @@ If you aren’t satisfied with the build tool and configuration choices, you can
 
 Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it. -->
 
 ## Authors
 
-👤 *Daniel Jaramillo*
+👤 _Daniel Jaramillo_
 
 - GitHub: [@D4nielJ](https://github.com/d4nielj)
 

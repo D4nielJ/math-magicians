@@ -1,11 +1,19 @@
+import React from 'react';
 import Calc from './components/calc';
 
-function App() {
-  return (
-    <div className="App">
-      <Calc />
-    </div>
-  );
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <Calc />
+      </div>
+    );
+  }
 }
 
 export default App;

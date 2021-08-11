@@ -1,15 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-// eslint-disable-next-line react/prefer-stateless-function
 class CalcButton extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
   render() {
     const { value, colored, span } = this.props;
     const classList = `calc__btn
       ${colored ? ' btn--colored' : ''} 
       ${span !== 1 ? ` btn--span-${span}` : ''}`;
     return (
-      <button type="button" className={classList}>
+      <button type="button" className={classList} data-name={value}>
         {value}
       </button>
     );
