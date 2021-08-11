@@ -32,7 +32,7 @@ const Calc = () => {
 
   return (
     <div className="calc">
-      <Display total={calc.total} next={calc.next} />
+      <Display state={calc} />
       <ButtonsContainer click={(e) => handleClick(calc, e)} keyDown={handleKeyDown} />
     </div>
   );
