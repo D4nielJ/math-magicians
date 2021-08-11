@@ -30,9 +30,11 @@ const Calc = () => {
     e.preventDefault();
   };
 
+  const { total, next, operation } = calc;
+
   return (
     <div className="calc">
-      <Display state={calc} />
+      <Display total={total} next={next} operation={operation} />
       <ButtonsContainer click={(e) => handleClick(calc, e)} keyDown={handleKeyDown} />
     </div>
   );

@@ -1,8 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import displayLogic from './logic/displayLogic';
 
 const Display = (props) => {
-  const { total, next, operation } = props.state;
+  const { total, next, operation } = props;
   const { operationChar, holder, display } = displayLogic(total, next, operation);
   let classOperation = 'display__operation';
   if (operationChar === 0) {
@@ -22,7 +23,6 @@ const Display = (props) => {
 };
 
 Display.propTypes = {
-  state: PropTypes.object,
   total: PropTypes.string,
   next: PropTypes.string,
   operation: PropTypes.string,
@@ -32,29 +32,6 @@ Display.defaultProps = {
   total: '',
   next: '',
   operation: '',
-};
-
-const displayLogic = (total, next, operation) => {
-  let display = 0;
-  let holder = 0;
-  let operationChar = 0;
-  if (operation) {
-    operationChar = operation;
-  }
-  if (total) {
-    display = total;
-  }
-  if (next) {
-    display = next;
-  }
-  if (total && operation) {
-    display = ' ';
-    holder = total;
-    if (next) {
-      display = next;
-    }
-  }
-  return { display, holder, operationChar };
 };
 
 export { Display as default };
