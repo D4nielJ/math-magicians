@@ -14,7 +14,7 @@ function isNumber(item) {
  *   operation:String  +, -, etc.
  */
 export default function calculate(obj, buttonName) {
-  if (!buttonName) {
+  if (buttonName === undefined) {
     return {};
   }
 
