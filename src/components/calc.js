@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import Display from './calc/display';
 import ButtonsContainer from './calc/buttonsContainer';
 import calculate from './calc/logic/calculate';
@@ -6,6 +6,11 @@ import './calc.css';
 
 const Calc = () => {
   const [calc, setCalc] = useState({ total: null, next: null, operation: null });
+  useEffect(() => {
+    if (calc.total === 'Error') {
+      setCalc({ total: null, next: null, operation: null });
+    }
+  });
 
   const updateState = async (obj, key) => {
     let { total, next, operation } = await calculate(obj, key);
