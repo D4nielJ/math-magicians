@@ -18,14 +18,14 @@ export default function operate(numberOne, numberTwo, operation) {
       return one.div(two).toString();
     }
   } catch {
-    return 'Error';
+    return 'Undefined';
   }
   try {
     if (operation === '%') {
       return one.mod(two).toString();
     }
   } catch {
-    return 'Error';
+    return 'Undefined';
   }
   throw Error(`Unknown operation '${operation}'`);
 }
