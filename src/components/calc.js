@@ -1,60 +1,66 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Display from './calc/display';
 import ButtonsContainer from './calc/buttonsContainer';
-import calculate from './calc/logic/calculate';
+import { isNumber, calculate } from './calc/logic/calculate';
 import './calc.css';
+import Warning from './calc/warning';
 
-class Calc extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      total: null,
-      next: null,
-      operation: null,
-    };
-    this.handleClick = this.handleClick.bind(this);
-    this.handleKeyDown = this.handleKeyDown.bind(this);
-  }
+const Calc = () => {
+  const [calc, setCalc] = useState({ total: null, next: null, operation: null });
 
-  handleClick = (e) => {
-    this.updateState(e.target.dataset.name);
+  const [badDivision, setBadDivision] = useState(false);
+  useEffect(() => {
+    if (badDivision) {
+      setTimeout(() => {
+        setBadDivision(false);
+      }, 5000);
+    }
+  });
+
+  const maxLength = 20;
+
+  const updateState = (obj, key) => {
+    if (obj.next !== null && obj.next.length >= maxLength && isNumber(key)) {
+      return;
+    }
+
+    let { total, next, operation } = calculate(obj, key);
+
+    if (total === undefined) {
+      total = obj.total;
+    }
+    if (next === undefined) {
+      next = obj.next;
+    }
+    if (operation === undefined) {
+      operation = obj.operation;
+    }
+
+    if (total === 'Undefined') {
+      setBadDivision(true);
+      setCalc({ total: null, next: null, operation: null });
+    } else {
+      setCalc({ total, next, operation });
+    }
   };
 
-  handleKeyDown = (e) => {
+  const handleClick = (obj, e) => {
+    updateState(obj, e.target.dataset.name);
+  };
+
+  const handleKeyDown = (e) => {
     e.preventDefault();
   };
 
-  updateState = (key) => {
-    const { total, next, operation } = calculate(this.state, key);
-    if (total || total === null) {
-      this.setState({
-        total,
-      });
-    }
-    if (next || next === null) {
-      this.setState({
-        next,
-      });
-    }
-    if (operation || operation === null) {
-      this.setState({
-        operation,
-      });
-    }
-  };
+  const { total, next, operation } = calc;
 
-  render() {
-    const { total, next } = this.state;
-    return (
-      <div className="calc">
-        <Display total={total} next={next} />
-        <ButtonsContainer
-          click={this.handleClick}
-          keyDown={this.handleKeyDown}
-        />
-      </div>
-    );
-  }
-}
+  return (
+    <div className="calc">
+      <Display total={total} next={next} operation={operation} />
+      <ButtonsContainer click={(e) => handleClick(calc, e)} keyDown={handleKeyDown} />
+      <Warning warning={badDivision} />
+    </div>
+  );
+};
 
-export { Calc as default };
+export default Calc;
