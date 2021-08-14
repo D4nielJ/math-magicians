@@ -24,23 +24,13 @@ const Calc = () => {
       return;
     }
 
-    let { total, next, operation } = calculate(obj, key);
+    const newObj = calculate(obj, key);
 
-    if (total === undefined) {
-      total = obj.total;
-    }
-    if (next === undefined) {
-      next = obj.next;
-    }
-    if (operation === undefined) {
-      operation = obj.operation;
-    }
-
-    if (total === 'Undefined') {
+    if (newObj.total === 'Undefined') {
       setBadDivision(true);
       setCalc({ total: null, next: null, operation: null });
     } else {
-      setCalc({ total, next, operation });
+      setCalc((preObj) => ({ ...preObj, ...newObj }));
     }
   };
 
