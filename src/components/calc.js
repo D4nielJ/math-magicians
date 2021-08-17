@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import Display from './calc/display';
-import ButtonsContainer from './calc/buttonsContainer';
 import { isNumber, calculate } from './calc/logic/calculate';
-import './calc.css';
+
+import Display from './calc/display';
 import Warning from './calc/warning';
+import ButtonsContainer from './calc/buttonsContainer';
+
+import './calc.css';
 
 const Calc = () => {
   const [calc, setCalc] = useState({ total: null, next: null, operation: null });
@@ -13,9 +15,9 @@ const Calc = () => {
     if (badDivision) {
       setTimeout(() => {
         setBadDivision(false);
-      }, 5000);
+      }, 3000);
     }
-  });
+  }, [badDivision]);
 
   const maxLength = 20;
 
