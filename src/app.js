@@ -3,40 +3,29 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
 } from 'react-router-dom';
-import Home from './components/home/home';
-import Quote from './components/quote/quote';
+import Navbar from './components/navbar/navbar';
+import Home from './pages/home/home';
+import NoMatch from './pages/noMatch/noMatch';
+import Quote from './pages/quote/quote';
 import Calculator from './components/calc/calc';
 
 const App = () => (
   <Router>
-    <div>
-      <nav>
-        <ul>
-          <li>
-            <Link to="/">Home</Link>
-          </li>
-          <li>
-            <Link to="/calculator">Calculator</Link>
-          </li>
-          <li>
-            <Link to="/quote">Quote</Link>
-          </li>
-        </ul>
-      </nav>
-
-      {/* A <Switch> looks through its children <Route>s and
-        renders the first one that matches the current URL. */}
+    <div className="app">
+      <Navbar />
       <Switch>
-        <Route path="/">
-          <Home />
-        </Route>
         <Route path="/calculator">
           <Calculator />
         </Route>
         <Route path="/quote">
           <Quote />
+        </Route>
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="*">
+          <NoMatch />
         </Route>
       </Switch>
     </div>

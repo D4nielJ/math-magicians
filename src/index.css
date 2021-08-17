@@ -8,6 +8,17 @@
   padding: 0;
 }
 
+ul,
+li {
+  list-style-type: none;
+  text-decoration: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 :root {
   --color-background: #f2e9e4;
   --color-display: #4a4e69;
@@ -34,6 +45,7 @@ body {
   font-size: 1.6rem;
 }
 
-#root {
-  padding-top: 15rem;
+.app {
+  max-width: 96rem;
+  margin: 0 auto;
 }
