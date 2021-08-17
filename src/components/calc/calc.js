@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from 'react';
-import { isNumber, calculate } from './calc/logic/calculate';
+import { isNumber, calculate } from './logic/calculate';
 
-import Display from './calc/display';
-import Warning from './calc/warning';
-import ButtonsContainer from './calc/buttonsContainer';
+import Display from './display';
+import Warning from './warning';
+import ButtonsContainer from './buttonsContainer';
 
 import './calc.css';
 
 const Calc = () => {
-  const [calc, setCalc] = useState({ total: null, next: null, operation: null });
+  const [calc, setCalc] = useState({
+    total: null,
+    next: null,
+    operation: null,
+  });
 
   const [badDivision, setBadDivision] = useState(false);
   useEffect(() => {
@@ -22,7 +26,11 @@ const Calc = () => {
   const maxLength = 20;
 
   const updateState = (obj, key) => {
-    if (obj.next !== null && obj.next.length >= maxLength && isNumber(key)) {
+    if (
+      obj.next !== null &&
+      obj.next.length >= maxLength &&
+      isNumber(key)
+    ) {
       return;
     }
 
@@ -48,8 +56,15 @@ const Calc = () => {
 
   return (
     <div className="calc">
-      <Display total={total} next={next} operation={operation} />
-      <ButtonsContainer click={(e) => handleClick(calc, e)} keyDown={handleKeyDown} />
+      <Display
+        total={total}
+        next={next}
+        operation={operation}
+      />
+      <ButtonsContainer
+        click={(e) => handleClick(calc, e)}
+        keyDown={handleKeyDown}
+      />
       <Warning warning={badDivision} />
     </div>
   );
