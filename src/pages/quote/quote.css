@@ -1,0 +1,12 @@
+.quote-container p {
+  margin-top: 6em;
+  font-size: 4rem;
+  line-height: 1.5em;
+}
+
+.quote-container span {
+  display: inline-block;
+  margin-left: 2rem;
+  font-style: italic;
+  font-weight: 600;
+}

@@ -1,0 +1,14 @@
+.calc-container {
+  margin-top: 8em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.calculator-title {
+  flex: 0 0 50%;
+  font-size: 4rem;
+}
+
+.calc {
+  flex: 0 0 50%;
+}

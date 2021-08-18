@@ -1,0 +1,43 @@
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: var(--color-background);
+}
+
+nav ul {
+  display: flex;
+}
+
+nav h1 {
+  padding: 1rem 0;
+  color: var(--color-display);
+}
+
+nav h1:hover {
+  color: var(--color-warning);
+}
+
+.nav-container {
+  max-width: 96rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.link {
+  padding: 1rem 2rem;
+  height: 100%;
+  color: var(--color-display);
+}
+
+.link:hover {
+  color: var(--color-warning);
+}
+
+.link-active {
+  color: var(--color-background-dark);
+  text-decoration: underline;
+}
