@@ -3,7 +3,8 @@ const Quote = () => (
     <p>
       Mathematics is not about numbers, equiations,
       computations, or algorithms: it is about
-      understanding.{' '}
+      understanding.
+      {' '}
       <span className="author">-William Paul Thurston</span>
     </p>
   </main>

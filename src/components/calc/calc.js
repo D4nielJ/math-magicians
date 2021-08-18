@@ -27,9 +27,9 @@ const Calc = () => {
 
   const updateState = (obj, key) => {
     if (
-      obj.next !== null &&
-      obj.next.length >= maxLength &&
-      isNumber(key)
+      obj.next !== null
+      && obj.next.length >= maxLength
+      && isNumber(key)
     ) {
       return;
     }

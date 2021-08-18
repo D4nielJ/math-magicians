@@ -22,8 +22,8 @@ const Navbar = () => {
 
   const createLinks = () =>
     links.map((link) => (
-      <li className="link" key={link.key}>
-        <NavLink to={link.path} activeClassName="active-link">
+      <li key={link.key}>
+        <NavLink to={link.path} className="link" activeClassName="link-active" exact>
           {link.text}
         </NavLink>
       </li>
@@ -31,8 +31,12 @@ const Navbar = () => {
 
   return (
     <nav>
-      <h1>Math Magicians</h1>
-      <ul>{createLinks()}</ul>
+      <div className="nav-container">
+        <NavLink to={links[0].path}>
+          <h1>Math Magicians</h1>
+        </NavLink>
+        <ul>{createLinks()}</ul>
+      </div>
     </nav>
   );
 };
