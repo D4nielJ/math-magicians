@@ -7,7 +7,7 @@ import Quote from './pages/quote/quote';
 import Calculator from './pages/calculator/calculator';
 
 const App = () => (
-  <Router>
+  <Router basename={process.env.PUBLIC_URL}>
     <div className="app">
       <Navbar />
       <Switch>
