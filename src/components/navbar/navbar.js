@@ -20,14 +20,13 @@ const Navbar = () => {
     },
   ];
 
-  const createLinks = () =>
-    links.map((link) => (
-      <li key={link.key}>
-        <NavLink to={link.path} className="link" activeClassName="link-active" exact>
-          {link.text}
-        </NavLink>
-      </li>
-    ));
+  const createLinks = () => links.map((link) => (
+    <li key={link.key}>
+      <NavLink to={link.path} className="link" activeClassName="link-active" exact>
+        {link.text}
+      </NavLink>
+    </li>
+  ));
 
   return (
     <nav>
