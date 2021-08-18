@@ -1,14 +1,10 @@
 import React from 'react';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './components/navbar/navbar';
 import Home from './pages/home/home';
 import NoMatch from './pages/noMatch/noMatch';
 import Quote from './pages/quote/quote';
-import Calculator from './components/calc/calc';
+import Calculator from './pages/calculator/calculator';
 
 const App = () => (
   <Router>

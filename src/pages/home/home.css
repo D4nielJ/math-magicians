@@ -1,0 +1,10 @@
+.home-title {
+  margin-top: 3em;
+  font-size: 4rem;
+  line-height: 3em;
+}
+
+.home-para {
+  margin-bottom: 2em;
+  max-width: 60ch;
+}

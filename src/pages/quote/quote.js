@@ -1,13 +1,15 @@
+import './quote.css';
+
 const Quote = () => (
-  <main>
+  <div className="quote-container">
     <p>
-      Mathematics is not about numbers, equiations,
+      "Mathematics is not about numbers, equations,
       computations, or algorithms: it is about
-      understanding.
+      understanding."
       {' '}
       <span className="author">-William Paul Thurston</span>
     </p>
-  </main>
+  </div>
 );
 
 export default Quote;
