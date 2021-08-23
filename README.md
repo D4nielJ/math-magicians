@@ -12,6 +12,7 @@ By building this application I got to learn and practice how to use React.
 ## Previews
 
 - [Visit the live preview here](https://d4nielj.github.io/math-magicians/)
+- [Visit live preview in Heroku](https://math-magicians-d4.herokuapp.com/)
 
 ### ![Screenshot](./screenshot.png)
 
