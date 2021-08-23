@@ -1,6 +1,6 @@
 {
   "name": "math-magician",
-  "homepage": "https://d4nielj.github.io/math-magicians/",
+  "homepage": "https://math-magicians-d4.herokuapp.com/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
